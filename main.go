@@ -32,8 +32,8 @@ func main() {
 	writeMessage()
 
 	// writes out its message using the logging feature
-	var logger logging.Logger = logging.NewDefaultLogger(logging.Information)
-	writeMessageLog(logger)
+	// var logger logging.Logger = logging.NewDefaultLogger(logging.Information)
+	// writeMessageLog(logger)
 
 	// Reading Configuration Settings
 	var cfg config.Configuration
@@ -44,11 +44,12 @@ func main() {
 	}
 
 	// DEBUG
-	fmt.Println(cfg)
+	//fmt.Println(cfg)
 
 	// # cannot use cfg (type config.Configuration) as type logging.LogLevel in argument to logging.NewDefaultLogger
-	// var logger2 logging.Logger = logging.NewDefaultLogger(cfg)
-	// writeMessageConfig(logger2, cfg)
+	// func NewDefaultLogger(level LogLevel) Logger
+	var logger2 logging.Logger = logging.NewDefaultLogger(cfg)
+	writeMessageConfig(logger2, cfg)
 
 }
 
